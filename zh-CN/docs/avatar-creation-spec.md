@@ -70,12 +70,14 @@
 ```json
 {
   "avatar_id": "kai_001",
+  "name": "周予衡",
   "collection": "weekday_workers",
   "listing_description": "一个专注的工作日上班族，可以让你选进自己的短篇故事里——沉稳、带点疲惫，但靠得住。",
   "species": "human",
   "universe": "modern",
   "realm": "earth",
   "base": "original",
+  "creation_method": "original",
   "traits": {
     "hair": "short_dark",
     "style": "smart_casual",
@@ -96,13 +98,15 @@
 
 | 字段 | 类型 | 说明 |
 |-------|------|-------------|
-| `avatar_id` | string | 唯一 ID，小写 + 下划线，命名后不可更改 |
+| `avatar_id` | string | 唯一 ID，小写英文 + 下划线，命名后不可更改。这是文件夹代称，不是显示标题。 |
+| `name` | string | 角色的真名／显示名称——这是买家看到的**上架标题**（例如 `周予衡`、`Signal`）。与 `avatar_id` 不同：`name` 可以是任何语言，`avatar_id` 必须保持小写英文。 |
 | `collection` | string | 这个 Avatar 所属的系列（你自己命名） |
 | `listing_description` | string | 2–3 句市集商品描述，说明买家会得到什么 + 角色的调性。别留空，否则你的 Avatar 上架时会没有描述。 |
 | `species` | string | 角色物种，例如 `human`、`robot`、`animal`、`spirit` |
 | `universe` | enum | 世界设定（见下方 Enum 清单） |
 | `realm` | enum | 所属领域（见下方 Enum 清单） |
 | `base` | string | `original` 或授权 IP 名称 |
+| `creation_method` | enum | 作品是怎么产出的——`original`、`original_ai_extended`、`ai_generated` 三者择一。见下方〈E) 创作方式与真品标识〉。 |
 | `traits` | object | 视觉特征（自由 key-value，至少 1 组） |
 | `rights` | object | 版权信息（见下方） |
 
@@ -165,6 +169,20 @@
 任何包含涉及未成年人性化内容的 Avatar，都会立刻被下架，且创作者账号将被终止，不论理由为何。
 
 如果角色的年龄模糊，视觉呈现应以成年为默认。
+
+---
+
+## E) 创作方式与真品标识
+
+`creation_method` 字段告诉买家这张图本身是怎么做出来的。它与 `base` / `rights`（描述 IP 出处）互相独立——`creation_method` 纯粹讲图像的产出方式。请从以下三个值择一（英文值原样保留，不要翻译）：
+
+| 值 | 含义 |
+|-------|-------------|
+| `original`（原创） | 由创作者本人亲手绘制／创作——在 iPad、传统媒材、或任何非 AI 的方式上完成。实际作品是由人画的，不是 AI 生成的。 |
+| `original_ai_extended`（原创 AI 延伸） | 以创作者原创／最初的角色设计为基础，再用 AI 来算图或延伸。不是纯粹由 AI 凭空生成——底下有一份人做的原创。 |
+| `ai_generated`（AI 生成） | 图像由 AI 生成。 |
+
+**真品标识：** 标记为 `original` 或 `original_ai_extended` 的 Avatar 会在上架页面获得真品标识，向买家标示这份作品**并非纯 AI 生成**。标记为 `ai_generated` 的 Avatar 不会有标识。请诚实选择——不实标示 `creation_method` 会被下架。
 
 ---
 

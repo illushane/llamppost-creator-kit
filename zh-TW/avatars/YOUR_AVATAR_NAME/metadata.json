@@ -1,11 +1,13 @@
 {
   "avatar_id": "YOUR_AVATAR_NAME_001",
+  "name": "周予衡",
   "collection": "your_collection_name",
   "listing_description": "必填——市集商品描述，2-3 句：買家會得到什麼、角色的調性。",
   "species": "human",
   "universe": "modern",
   "realm": "earth",
   "base": "original",
+  "creation_method": "original",
   "traits": {
     "hair": "describe_hair",
     "style": "describe_style",

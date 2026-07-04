@@ -42,11 +42,13 @@
 
 1. 画像をフォルダに `avatar.png` として置く（PNG、正方形、最低 512×512）。
 2. `metadata.json` を開いて以下を記入する——必要なのはこれだけ：
-   - `avatar_id` — 英小文字 + アンダースコア、例：`night_wolf_001`
+   - `avatar_id` — 英小文字 + アンダースコア、例：`night_wolf_001`（フォルダのスラッグで、タイトルではない）
+   - `name` — キャラクターの表示名／リスティングのタイトル、任意の言語、例：`ハル`、`周予衡`、`Signal`
    - `collection` — あなたのシリーズ名、例：`weekday_workers`
    - `listing_description` — 2〜3 文：購入者が得られるもの + キャラクターの雰囲気（これがリスティングに表示される——空欄にしないこと）
    - `species` / `universe` / `realm` — `docs/avatar-creation-spec.md` の enum から選ぶ
    - `base` — `original`（自作）またはライセンス IP 名
+   - `creation_method` — 作品の制作方法：`original` / `original_ai_extended` / `ai_generated`（仕様参照；最初の 2 つは真正性バッジが付く）
    - `traits` — ビジュアルタグをいくつか（髪 / スタイル / 表情）
    - `rights.creator` — あなたの creator id
 3. フォルダをアップロード。完了。

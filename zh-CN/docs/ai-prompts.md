@@ -42,11 +42,13 @@
 
 1. 把你的图放进文件夹，命名为 `avatar.png`（PNG，正方形，至少 512×512）。
 2. 打开 `metadata.json` 填这几项——就这些：
-   - `avatar_id`——英文小写 + 下划线，例如 `night_wolf_001`
+   - `avatar_id`——英文小写 + 下划线，例如 `night_wolf_001`（文件夹代称，不是标题）
+   - `name`——角色的显示名称／上架标题，任何语言皆可，例如 `周予衡`、`Signal`
    - `collection`——你的系列名，例如 `weekday_workers`
    - `listing_description`——2–3 句：买家会得到什么 + 角色的调性（这是上架页会显示的内容——别留空）
    - `species` / `universe` / `realm`——从 `docs/avatar-creation-spec.md` 的枚举值里挑
    - `base`——`original`（你自己的作品）或授权 IP 名称
+   - `creation_method`——作品怎么产出的：`original` / `original_ai_extended` / `ai_generated`（见规格；前两者会获得真品标识）
    - `traits`——几个视觉标签（头发／风格／表情）
    - `rights.creator`——你的 creator id
 3. 上传文件夹。完成。

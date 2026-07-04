@@ -70,12 +70,14 @@ Avatar を公開するには 2 つのものが必要です：**画像ファイ�
 ```json
 {
   "avatar_id": "kai_001",
+  "name": "ハル",
   "collection": "weekday_workers",
   "listing_description": "あなたのショートストーリーにキャスティングできる、平日のオフィスワーカー——落ち着いていて、少し疲れていて、頼りになる。",
   "species": "human",
   "universe": "modern",
   "realm": "earth",
   "base": "original",
+  "creation_method": "original",
   "traits": {
     "hair": "short_dark",
     "style": "smart_casual",
@@ -96,13 +98,15 @@ Avatar を公開するには 2 つのものが必要です：**画像ファイ�
 
 | フィールド | 型 | 説明 |
 |-------|------|-------------|
-| `avatar_id` | string | 一意の ID、小文字 + アンダースコア、命名後は変更不可 |
+| `avatar_id` | string | 一意の ID、小文字英数字 + アンダースコア、命名後は変更不可。これはフォルダのスラッグであり、表示タイトルではありません。 |
+| `name` | string | キャラクターの本名／表示名——購入者に見える**リスティングのタイトル**です（例：`ハル`、`Signal`、`周予衡`）。`avatar_id` とは別物で、`name` は任意の言語で構いませんが、`avatar_id` は小文字英数字のままにしてください。 |
 | `collection` | string | この Avatar が属するシリーズ（あなた自身で命名） |
 | `listing_description` | string | マーケットのリスティングに表示される 2〜3 文の商品説明。購入者が得られるもの＋キャラの雰囲気。空欄にしない。 |
 | `species` | string | キャラクターの種族、例：`human`、`robot`、`animal`、`spirit` |
 | `universe` | enum | 世界設定（下の Enum リスト参照） |
 | `realm` | enum | 所属領域（下の Enum リスト参照） |
 | `base` | string | `original` またはライセンスされた IP 名 |
+| `creation_method` | enum | 作品がどう作られたか——`original`、`original_ai_extended`、`ai_generated` のいずれか 1 つ。下記〈E) 制作方法と真正性バッジ〉を参照。 |
 | `traits` | object | ビジュアル特徴（自由な key-value、最低 1 つ） |
 | `rights` | object | 著作権情報（下記参照） |
 
@@ -165,6 +169,20 @@ Avatar を公開するには 2 つのものが必要です：**画像ファイ�
 未成年者の性的なコンテンツを含む Avatar は、理由を問わず直ちに削除され、クリエイターのアカウントは終了されます。
 
 キャラクターの年齢が曖昧な場合、ビジュアル表現は成人をデフォルトにしてください。
+
+---
+
+## E) 制作方法と真正性バッジ
+
+`creation_method` フィールドは、画像そのものがどう作られたかを購入者に伝えます。`base` / `rights`（IP の出自を表す）とは独立していて、`creation_method` は純粋に画像の制作方法だけを指します。次の 3 つの値から 1 つを選んでください（英語の値はそのまま残し、翻訳しないでください）：
+
+| 値 | 意味 |
+|-------|-------------|
+| `original`（原創） | クリエイター本人が手で描いた／制作した——iPad、伝統的な画材、その他あらゆる非 AI の方法で完成。実際の作品は人が描いたもので、AI 生成ではありません。 |
+| `original_ai_extended`（原創 AI 拡張） | クリエイターのオリジナル／最初のキャラクターデザインをもとに、AI でレンダリングまたは拡張したもの。純粋に AI が無から生み出したものではなく、下地に人が作ったオリジナルがあります。 |
+| `ai_generated`（AI 生成） | 画像が AI によって生成されたもの。 |
+
+**真正性バッジ：** `original` または `original_ai_extended` とマークされた Avatar は、リスティング上で真正性バッジを取得し、その作品が**純粋な AI 生成ではない**ことを購入者に示します。`ai_generated` とマークされた Avatar にはバッジは付きません。正直に選んでください——`creation_method` の虚偽表示は削除の対象となります。
 
 ---
 

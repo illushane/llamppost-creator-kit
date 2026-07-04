@@ -42,11 +42,13 @@ If your character image is done and you just need the metadata, you don't need t
 
 1. Put your image in the folder as `avatar.png` (PNG, square, at least 512×512).
 2. Open `metadata.json` and fill these — that's all there is:
-   - `avatar_id` — lowercase English + underscores, e.g. `night_wolf_001`
+   - `avatar_id` — lowercase English + underscores, e.g. `night_wolf_001` (folder slug, not the title)
+   - `name` — the character's display name / listing title, any language, e.g. `Signal`, `周予衡`
    - `collection` — your series name, e.g. `weekday_workers`
    - `listing_description` — 2–3 sentences: what the buyer gets + the character's vibe (this is what shows on the listing — don't leave it blank)
    - `species` / `universe` / `realm` — pick from the enums in `docs/avatar-creation-spec.md`
    - `base` — `original` (your own art) or the licensed IP name
+   - `creation_method` — how the art was made: `original` / `original_ai_extended` / `ai_generated` (see spec; the first two get an authenticity badge)
    - `traits` — a few visual tags (hair / style / expression)
    - `rights.creator` — your creator id
 3. Upload the folder. Done.

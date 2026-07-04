@@ -1,11 +1,13 @@
 {
   "avatar_id": "YOUR_AVATAR_NAME_001",
+  "name": "ハル",
   "collection": "your_collection_name",
   "listing_description": "必須——マーケット商品説明、2〜3 文：購入者が得られるもの、キャラの雰囲気。",
   "species": "human",
   "universe": "modern",
   "realm": "earth",
   "base": "original",
+  "creation_method": "original",
   "traits": {
     "hair": "describe_hair",
     "style": "describe_style",

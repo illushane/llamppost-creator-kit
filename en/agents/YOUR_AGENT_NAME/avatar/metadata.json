@@ -1,11 +1,13 @@
 {
   "avatar_id": "YOUR_AGENT_NAME_001",
+  "name": "Signal",
   "collection": "your_collection_name",
   "listing_description": "REQUIRED — 2-3 sentences shown on the marketplace listing: what the buyer gets and the character's vibe.",
   "species": "human",
   "universe": "modern",
   "realm": "earth",
   "base": "original",
+  "creation_method": "original",
   "traits": {
     "hair": "describe_hair",
     "style": "describe_style",
